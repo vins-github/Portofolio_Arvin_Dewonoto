@@ -27,7 +27,7 @@ export const Navbar = () => {
   return (
     <nav
       className={cn(
-        "fixed w-full z-40 transition-all duration-300",
+        "fixed w-full z-50 transition-all duration-300",
         isScrolled ? "py-3 bg-background/80 backdrop-blur-md shadow-xs" : "py-6"
       )}
     >
@@ -53,43 +53,44 @@ export const Navbar = () => {
               {item.name}
             </a>
           ))}
-
-          <ThemeToggle />
+          <ThemeToggle className="hidden md:block" />
         </div>
 
-        {/* mobile nav button */}
-        <button
-          onClick={() => setIsMenuOpen((prev) => !prev)}
-          className="md:hidden p-2 text-foreground z-50"
-          aria-label={isMenuOpen ? "Close Menu" : "Open Menu"}
-        >
-          {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
+        {/* kanan (mobile): toggle + menu button */}
+        <div className="flex items-center gap-3 md:hidden">
+          <ThemeToggle className="block md:hidden" />
+          <button
+            onClick={() => setIsMenuOpen((prev) => !prev)}
+            className="p-2 text-foreground relative z-50"
+            aria-label={isMenuOpen ? "Close Menu" : "Open Menu"}
+          >
+            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
+      </div>
 
-        {/* mobile nav menu */}
-        <div
-          className={cn(
-            "fixed inset-0 bg-background/95 backdrop-blur-md z-40 flex flex-col items-center justify-center",
-            "transition-all duration-300 md:hidden",
-            isMenuOpen
-                ? "opacity-100 scale-100 pointer-events-auto"
-                : "opacity-0 scale-0 pointer-events-none"
-          )}
-        >
-          <div className="flex flex-col space-y-8 text-xl">
-            {navItems.map((item, key) => (
-              <a
-                key={key}
-                href={item.href}
-                className="text-foreground/80 hover:text-primary transition-colors duration-300"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                {item.name}
-              </a>
-            ))}
-            {/* ✅ Toggle juga di mobile */}
-            <ThemeToggle />
-          </div>
+      {/* mobile nav menu */}
+      <div
+        className={cn(
+          // ⬇️ Bukan full `inset-0`, tapi mulai dari bawah navbar
+          "fixed inset-x-0 top-[72px] bg-background/95 backdrop-blur-md z-40 flex flex-col items-center",
+          "transition-all duration-300 md:hidden",
+          isMenuOpen
+            ? "opacity-100 translate-y-0 pointer-events-auto"
+            : "opacity-0 -translate-y-10 pointer-events-none"
+        )}
+      >
+        <div className="flex flex-col space-y-8 text-xl py-10">
+          {navItems.map((item, key) => (
+            <a
+              key={key}
+              href={item.href}
+              className="text-foreground/80 hover:text-primary transition-colors duration-300"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              {item.name}
+            </a>
+          ))}
         </div>
       </div>
     </nav>
