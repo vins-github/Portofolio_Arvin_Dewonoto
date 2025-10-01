@@ -7,7 +7,7 @@ const projects = [
     description: "A web app for real-time water quality monitoring, pollution reporting, and interactive data visualization.",
     image: "/projects/Jernih.png",
     tags: ["React", "TailwindCSS", "Supabase"],
-    demoUrl: "#",
+    demoUrl: "https://jernih.vercel.app",
     githubUrl: "https://github.com/Allen-pie/Jernih_Frontend",
   },
   {
@@ -16,7 +16,7 @@ const projects = [
     description: "An online showroom platform with a car catalog and pricing details",
     image: "/projects/CarShowroom.jpeg",
     tags: ["HTML", "CSS", "JS"],
-    demoUrl: "",
+    // demoUrl: "",
     githubUrl: "https://github.com/vins-github/Car-Showroom"
   },
   {
@@ -25,8 +25,17 @@ const projects = [
     description: "A computer vision project to control the Subway Surfer game using real-time hand gesture recognition.",
     image: "/projects/subwaysurf (1).png",
     tags: ["Python", "OpenCV", "MediaPipe"],    
-    demoUrl: "#",
+    // demoUrl: "#",
     githubUrl: "https://github.com/vins-github/subwaySurf",
+  },
+  {
+    id: 4,
+    title: "To-Do List",
+    description: "To do list web app with task management features including add, delete, and mark as complete.",
+    image: "/projects/To-do list.png",
+    tags: ["HTML", "CSS", "JS"],    
+    demoUrl: "https://vins-github.github.io/-CodingCamp-290925-ArvinDewonoto/",
+    githubUrl: "https://github.com/vins-github/-CodingCamp-290925-ArvinDewonoto",
   },
 ];
 
@@ -73,13 +82,15 @@ export const ProjectsSection = () => {
                 </p>
                 <div className="flex justify-between items-center">
                   <div className="flex space-x-3">
-                    {/* <a
-                      href={project.demoUrl}
-                      target="_blank"
-                      className="text-foreground/80 hover:text-primary transition-colors duration-300"
-                    >
-                      <ExternalLink size={20} />
-                    </a> */}
+                      {project.demoUrl ? (
+                        <a
+                          href={project.demoUrl}
+                          target="_blank"
+                          className="text-foreground/80 hover:text-primary transition-colors duration-300"
+                        >
+                          <ExternalLink size={20} />
+                        </a>
+                      ) : null}
                     <a
                       href={project.githubUrl}
                       target="_blank"
