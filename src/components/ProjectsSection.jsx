@@ -37,6 +37,15 @@ const projects = [
     demoUrl: "https://vins-github.github.io/-CodingCamp-290925-ArvinDewonoto/",
     githubUrl: "https://github.com/vins-github/-CodingCamp-290925-ArvinDewonoto",
   },
+  {
+    id: 5,
+    title: "Reflected XSS Vulnerability Analysis",
+    description: "Security analysis project demonstrating reflected XSS vulnerability detection and exploitation using Burp Suite on PortSwigger Web Security Academy lab environment.",
+    image: "/projects/xss-analysis.png",
+    tags: ["Burp Suite", "Security", "XSS", "Penetration Testing"],    
+    demoUrl: "https://drive.google.com/file/d/1yphfINgZYCf8v6LNMN9eJV6KyUSzuAsQ/view?usp=sharing",
+    // githubUrl:,
+  }
 ];
 
 export const ProjectsSection = () => {

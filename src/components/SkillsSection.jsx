@@ -38,6 +38,12 @@ const skills = [
     category: "Technical Skills",
     subskills: ["Utility Classes", "Responsive Layouts"] 
   },
+    { 
+    name: "Burp Suite", 
+    level: 80, 
+    category: "tools",
+    subskills: ["Web Security Testing"] 
+  },
   { 
     name: "Figma", 
     level: 80, 
