@@ -41,7 +41,7 @@ const projects = [
     id: 5,
     title: "Reflected XSS Vulnerability Analysis",
     description: "Security analysis project demonstrating reflected XSS vulnerability detection and exploitation using Burp Suite on PortSwigger Web Security Academy lab environment.",
-    image: "/projects/xss-analysis.png",
+    image: "./projects/BurpSuite.png",
     tags: ["Burp Suite", "Security", "XSS", "Penetration Testing"],    
     demoUrl: "https://drive.google.com/file/d/1yphfINgZYCf8v6LNMN9eJV6KyUSzuAsQ/view?usp=sharing",
     // githubUrl:,
